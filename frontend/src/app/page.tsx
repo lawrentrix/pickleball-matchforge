@@ -1,4 +1,5 @@
 import Link from "next/link";
+import StaticDataPanel from "./_components/StaticDataPanel";
 
 export default function Home() {
   return (
@@ -30,6 +31,10 @@ export default function Home() {
 
       <div className="mt-10 rounded-2xl border bg-slate-50 p-6 text-sm text-slate-700">
         Data persistence is currently local-only (file-backed) for development. A real database/auth layer will come later.
+      </div>
+
+      <div className="mt-6">
+        <StaticDataPanel />
       </div>
     </div>
   );
