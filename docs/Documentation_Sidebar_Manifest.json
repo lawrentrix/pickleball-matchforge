@@ -1,0 +1,28 @@
+{
+  "root_folder": "docs",
+  "root_label": "Documentation",
+  "generated_on": "2026-04-30",
+  "generated_at": "2026-04-30T10:57:25",
+  "purpose": "Sidebar navigation reference for the docs directory.",
+  "default_document_path": "docs/README.md",
+  "folders": [
+    {
+      "folder_name": "04_Project_Documentation",
+      "folder_label": "Project Documentation",
+      "folder_path": "docs/04_Project_Documentation",
+      "files": []
+    },
+    {
+      "folder_name": "04_Project_Documentation/01_Reference",
+      "folder_label": "Reference",
+      "folder_path": "docs/04_Project_Documentation/01_Reference",
+      "files": [
+        {
+          "file_name": "objectives.md",
+          "file_label": "Objectives",
+          "file_path": "docs/04_Project_Documentation/01_Reference/objectives.md"
+        }
+      ]
+    }
+  ]
+}
