@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Frontend: Dev (3000)",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "npm run dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend",
+        "clear": false
+      }
+    },
+    {
+      "label": "Backend: FastAPI (8001)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". .\\.venv\\Scripts\\Activate.ps1; uvicorn app.main:app --reload --host 127.0.0.1 --port 8001 --app-dir backend"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend",
+        "clear": false
+      }
+    },
+    {
+      "label": "Dev: Start All",
+      "dependsOn": ["Frontend: Dev (3000)", "Backend: FastAPI (8001)"],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "group": "dev"
+      }
+    },
+    {
+      "label": "Frontend: Stop (3000)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$c=Get-NetTCPConnection -State Listen -LocalPort 3000 -ErrorAction SilentlyContinue; if($c){$p=$c|Select-Object -ExpandProperty OwningProcess -Unique; foreach($id in $p){Stop-Process -Id $id -Force -ErrorAction SilentlyContinue}}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend",
+        "clear": false
+      }
+    },
+    {
+      "label": "Backend: Stop (8001)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$c=Get-NetTCPConnection -State Listen -LocalPort 8001 -ErrorAction SilentlyContinue; if($c){$p=$c|Select-Object -ExpandProperty OwningProcess -Unique; foreach($id in $p){Stop-Process -Id $id -Force -ErrorAction SilentlyContinue}}"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend",
+        "clear": false
+      }
+    },
+    {
+      "label": "Dev: Stop All",
+      "dependsOn": ["Frontend: Stop (3000)", "Backend: Stop (8001)"],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "group": "dev"
+      }
+    }
+  ]
+}
+
