@@ -60,6 +60,9 @@ coverage.xml
 .vscode/
 .cache/
 
+# Keep shared VS Code tasks
+!.vscode/tasks.json
+
 # Explicit env variants
 .env.local
 .env.development
