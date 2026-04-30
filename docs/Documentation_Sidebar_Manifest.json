@@ -2,10 +2,28 @@
   "root_folder": "docs",
   "root_label": "Documentation",
   "generated_on": "2026-04-30",
-  "generated_at": "2026-04-30T10:57:25",
+  "generated_at": "2026-04-30T11:08:33",
   "purpose": "Sidebar navigation reference for the docs directory.",
   "default_document_path": "docs/README.md",
   "folders": [
+    {
+      "folder_name": "03_Technical_Blueprints",
+      "folder_label": "Technical Blueprints",
+      "folder_path": "docs/03_Technical_Blueprints",
+      "files": []
+    },
+    {
+      "folder_name": "03_Technical_Blueprints/01_Reference",
+      "folder_label": "Reference",
+      "folder_path": "docs/03_Technical_Blueprints/01_Reference",
+      "files": [
+        {
+          "file_name": "local-player-store.md",
+          "file_label": "Local Player Store",
+          "file_path": "docs/03_Technical_Blueprints/01_Reference/local-player-store.md"
+        }
+      ]
+    },
     {
       "folder_name": "04_Project_Documentation",
       "folder_label": "Project Documentation",
@@ -21,6 +39,42 @@
           "file_name": "objectives.md",
           "file_label": "Objectives",
           "file_path": "docs/04_Project_Documentation/01_Reference/objectives.md"
+        }
+      ]
+    },
+    {
+      "folder_name": "05_Functional_Specifications",
+      "folder_label": "Functional Specifications",
+      "folder_path": "docs/05_Functional_Specifications",
+      "files": []
+    },
+    {
+      "folder_name": "05_Functional_Specifications/01_Reference",
+      "folder_label": "Reference",
+      "folder_path": "docs/05_Functional_Specifications/01_Reference",
+      "files": [
+        {
+          "file_name": "player-registration.md",
+          "file_label": "Player Registration",
+          "file_path": "docs/05_Functional_Specifications/01_Reference/player-registration.md"
+        }
+      ]
+    },
+    {
+      "folder_name": "06_API_Documentation",
+      "folder_label": "API Documentation",
+      "folder_path": "docs/06_API_Documentation",
+      "files": []
+    },
+    {
+      "folder_name": "06_API_Documentation/01_Reference",
+      "folder_label": "Reference",
+      "folder_path": "docs/06_API_Documentation/01_Reference",
+      "files": [
+        {
+          "file_name": "players-api.md",
+          "file_label": "Players API",
+          "file_path": "docs/06_API_Documentation/01_Reference/players-api.md"
         }
       ]
     }
