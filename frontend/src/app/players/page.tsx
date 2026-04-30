@@ -1,4 +1,5 @@
 import Link from "next/link";
+import StaticDataPanel from "@/app/_components/StaticDataPanel";
 import { listPlayers } from "@/lib/playerStore";
 
 function labelSkill(value: string) {
@@ -59,22 +60,19 @@ export default async function PlayersPage() {
                 </div>
                 <div className="col-span-12 mt-2 text-xs text-slate-600">
                   Availability: {p.availability.days.length ? p.availability.days.join(", ") : "—"};{" "}
-                  {p.availability.windows.length ? p.availability.windows.join(", ") : "—"}
-                  {p.tournament.interested ? (
-                    <>
-                      {" "}
-                      • Tournament: yes
-                      {p.tournament.divisions?.length ? ` (${p.tournament.divisions.join(", ")})` : ""}
-                    </>
-                  ) : (
-                    <> • Tournament: no</>
-                  )}
+                  {p.availability.windows.length ? p.availability.windows.join(", ") : "—"} • Tournament:{" "}
+                  {p.tournament.interested ? "yes" : "no"}
+                  {p.tournament.interested && p.tournament.divisions?.length ? ` (${p.tournament.divisions.join(", ")})` : ""}
                 </div>
               </div>
             ))}
           </div>
         </div>
       )}
+
+      <div className="mt-8">
+        <StaticDataPanel />
+      </div>
     </div>
   );
 }
